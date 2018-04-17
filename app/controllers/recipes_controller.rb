@@ -14,4 +14,11 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
   end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:title)
+  end
+
 end
